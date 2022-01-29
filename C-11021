@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(void){
+	int T;
+	int i;
+	scanf("%d", &T);
+	for(i =0; i<T; i++) {
+		int A,B;
+		scanf("%d %d", &A, &B);
+		printf("Case #%d: %d\n", i+1, A+B);
+	}
+	return 0;
+}
