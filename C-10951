@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void){
+	int i;
+	int A,B;
+	while(scanf("%d %d", &A, &B) != -1) {
+		//scanf의 EOF로 마지막 도착시 -1로 반환 
+		printf("%d\n", A+B);
+	}
+	return 0;
+}
