@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(void){
+	int N[9];
+	int i;
+	int M=0,s=0;
+	
+	for(i=0; i<9; i++) {
+		scanf("%d",&N[i]);
+		if(N[i]>M) {
+			M=N[i];
+			s=i+1;	
+		}
+	}
+	printf("%d\n%d\n", M, s);
+	return 0;
+}
