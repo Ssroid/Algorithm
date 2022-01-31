@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+	
+	int T, x, y;
+	int i;
+	int An;
+	
+	scanf("%d", &T);
+	
+	for(i=0;i<T;i++) {
+		int j=2;
+		scanf("%d %d", &x, &y);
+		if(y-x<=3) {
+			An = y-x;
+			printf("%d\n", An); //3까지는 거리=횟수 
+		}
+		else {
+			j = sqrt(y-x);//제곱근 구하는 함수 
+			if(y-x==j*j) printf("%d\n", 2*j-1); //거리가 제곱식이면  
+			else if(y-x>j*j && y-x<=j*j+j) printf("%d\n", 2*j); //거리가 제곱식보다 크고 j^2+j까지 일경우 
+			else printf("%d\n", 2*j+1); // 그 외의 경우 
+		}
+	}
+	return 0;
+	/*거리 횟수
+		4   3
+		5   4 (제곱윗수는 이전횟수+1) 
+		6   4
+		7   5 (양의제곱근^2+제곱근수부터 이전횟수+1 )
+		8   5
+		9   5
+		10   6
+		11   6
+		12   6 */
+}
