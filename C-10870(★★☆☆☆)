@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int Fibonacci(int n);
+
+int main(void)
+{
+	int n;
+	scanf("%d", &n);
+	
+	int An=Fibonacci(n);
+	printf("%d\n", An);
+	return 0;
+}
+
+int Fibonacci(int n) { //return을 해주면 코드가 짧아짐
+	if(n==0) return 0;
+	else if(n==1) return 1;
+	else return Fibonacci(n-1)+Fibonacci(n-2); 
+}
