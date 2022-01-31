@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int Factorial(int n);
+
+int main(void)
+{
+	int N;
+	scanf("%d", &N);
+	
+	int An=Factorial(N);
+	printf("%d\n", An);
+	return 0;
+}
+
+int Factorial(int n) {
+	int A;
+	if(n>1) A=n*Factorial(n-1);
+	else A=1;
+	return A;
+}
