@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i,j,k;
+	int N, M;
+	int An=0;
+	scanf("%d %d", &N, &M);
+	int arr[N];
+	for(i=0;i<N;i++) {
+		scanf("%d", &arr[i]);
+	}
+	for(i=0;i<N;i++) {
+		for(j=i+1;j<N;j++) {
+			for(k=j+1;k<N;k++) {
+				int p = arr[i]+arr[j]+arr[k];
+				if(p<=M && p>An) An=p; 	
+				}
+			}
+		}
+	printf("%d", An);
+	
+	return 0;
+}
+
