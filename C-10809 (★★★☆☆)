@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	char S[100];
+	int Alpha[26];
+	int i,j;
+	int N=0;
+	scanf("%s", S);
+	for(i=0;i<26;i++) {
+		Alpha[i]=-1; //미리 -1로 초기화 
+	}
+	for(i=0;i<strlen(S);i++) {
+		for(j=0;j<26;j++) {
+			if(S[i] == 'a'+j && Alpha[j]==-1) { //문자열의 i번쨰가 알파벳위치일떄와 첫번쨰열만 인식하도록 
+				Alpha[j] = N;
+				N++;
+				break;
+			}
+			if(S[i] == 'a'+j && Alpha[j]>=0) { //이전에 있는 알파벳의 경우 N을 증가하기 위해 
+				N++;
+			}
+		}
+	}
+	for(i=0;i<26;i++) {
+		printf("%d ", Alpha[i]);
+	}
+ 	return 0;
+}
+
