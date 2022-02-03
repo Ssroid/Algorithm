@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int N, i, j, s, An=0;
+	int arr[100];
+	
+	scanf("%d", &N);
+	
+	for(i=0;i<N;i++) {
+		s=0;
+		scanf("%d", &arr[i]);
+		for(j=1;j<arr[i]; j++) {
+			if(arr[i]%j == 0) {
+				s++;
+			}
+		}
+		if(s==1) {
+			An ++;
+		}
+	}
+	
+	printf("%d", An);
+	return 0;
+}
