@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int M, N, i, j, s, total=0;
+	int min=10001;
+	
+	scanf("%d %d",&M, &N);
+	
+	for(i=N;i>=M;i--) { //M, N이랑 같을떄도 있음 
+		s=0;
+		for(j=1;j<i; j++) { 
+			if(i%j == 0) {
+				s++;
+			}
+		}
+		if(s==1) {  //숫자가 소수일때 
+			total += i;
+			if(i<min) min=i;
+		}
+	}
+	if(min==10001) printf("-1");
+	else printf("%d\n%d", total, min);
+	return 0;
+}
