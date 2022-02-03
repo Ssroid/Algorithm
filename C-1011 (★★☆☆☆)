@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int A,B,V;
+	int m,n, An;
+	scanf("%d %d %d", &A, &B, &V); 
+	m = V-A; //전체거리-하루거리 
+	n = A-B; //하루거리-떨어진거리 
+	if(m%n==0) An = m/n+1; //m까지의 거리 딱 도착하면 +하루 
+	else An = m/n+2; //m까지 거리가 좀 남으면 +이틀 
+	
+	printf("%d", An);
+	return 0;
+}
