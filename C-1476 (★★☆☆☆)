@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void)
+{
+	
+	int E, S, M;
+	scanf("%d %d %d", &E, &S, &M);
+	int An=16;
+	int e,s,m;
+	while(1) {
+		if(E<=15 && E==S) {
+			if(S==M) {
+				printf("%d", E);
+				break;
+			}
+		}
+		e = An%15;
+		if(e==0) e=15;
+		s = An%28;
+		if(s==0) s=28;
+		m = An%19;
+		if(m==0) m=19;
+		if(e==E && s==S) {
+			if(m==M) {
+				printf("%d", An);
+				break;	
+			}
+		}
+		An++;
+	}
+	return 0;
+}
