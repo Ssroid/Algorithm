@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i;
+	int T, N;
+	unsigned long long dp[100]; //자료형보다 숫자가 크면 안됨 
+	dp[0] = 1, dp[1] = 1, dp[2] = 1, dp[3] = 2, dp[4]=2, dp[5]=2;
+	for(i=5;i<100;i++) { //N이 5이상일때 점화식이 가능 
+		dp[i] = dp[i-1] + dp[i-5]; //n>5일때 P(n)=P(n-1)+P(n-5) 
+	}
+	scanf("%d", &T);
+	for(i=0;i<T;i++) {
+		scanf("%d", &N);
+		printf("%lld\n", dp[N-1]); //long long의 자료형은 %lld 
+	}
+	return 0;
+}
