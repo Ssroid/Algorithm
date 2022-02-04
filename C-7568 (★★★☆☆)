@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int N, x, y;
+	int i, j;
+	scanf("%d", &N);
+	int size[N][2];
+	int An[N]; //
+	for(i=0;i<N;i++) {
+		An[i] = 0;
+	}
+	for(i=0;i<N;i++) {
+		scanf("%d %d", &size[i][0], &size[i][1]);
+		
+	}
+	for(i=0;i<N;i++) {
+		for(j=0;j<N;j++) {
+			if(size[i][0]<size[j][0] && size[i][1]<size[j][1]) {
+				An[i]++;
+			}
+		}
+	}
+	for(i=0;i<N;i++) {
+		printf("%d ", An[i]+1);
+	}
+	return 0;
+}
