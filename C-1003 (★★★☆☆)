@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i;
+	int arr[41]; //40일때는 N=40일때가 안나오므로 41로 해야한다.  
+	int T, N;
+	arr[0] = 0; //arr[0] = 0이므로 40+1을 해줘야 배열값이 다들어감. 
+	arr[1] = 1;
+	for(i=2;i<41;i++) { //for로 돌려서 미리 값 다 구하기. 
+		arr[i] = arr[i-1]+arr[i-2];
+	}
+	scanf("%d", &T);
+	for(i=0;i<T;i++) {
+		scanf("%d", &N);
+		if(N==0) printf("%d %d\n", 1, 0); 
+		else printf("%d %d\n", arr[N-1], arr[N]); //\n을 잊지말자... 
+		//규칙을 찾아보면 Zero는 피보나치N-1의 수이고 , One은 피보나치N의 값이다. 
+	} 
+	return 0;
+}
