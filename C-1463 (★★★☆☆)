@@ -1,0 +1,31 @@
+#include <stdio.h>
+/*
+1. 횟수:이전 값 + 1(값에-1하고 이전 횟수)
+2. 횟수:2로 나누어지면 N/2번째 값 +1(값에 /2하고 그 값의 횟수)
+3. 횟수:3으로 나누어지면 N/3번째 값 +1(값에 /3하고 그 값의 횟수)   
+1번2번3번 세개 비교해서 낮은값 찾기
+숫자N  2	3	4	5	6	7	8	9	10
+횟수값 1	1	2	3	2	3	3	2	3	 
+*/
+int main(void)
+{
+	int i;
+	int N, two, thr;
+	short arr[1000001]; //배열의크기 자료형 잘쓰기 
+	arr[2] = 1;
+	arr[3] = 1;
+	for(i=4;i<1000001;i++) {
+		arr[i] = arr[i-1] + 1;
+		if(i%2==0) {
+			two = arr[i/2] + 1;
+			arr[i] = (arr[i] < two) ? arr[i] : two;
+		}
+		if(i%3==0) {
+			thr = arr[i/3] + 1;
+			arr[i] = (arr[i] < thr) ? arr[i] : thr;
+		}
+	}
+	scanf("%d", &N);
+	printf("%d\n", arr[N]);
+	return 0;
+}
