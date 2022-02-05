@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i,j, cnt=0;
+	int arr[27];
+	int N;
+	for(i=1;i<104;i++) {
+		int s=0;
+		for(j=1;j<i;j++) {
+			if(i%j==0) s++;
+		}
+		if(s==1) {
+			arr[cnt]=i;
+			cnt++;
+		}
+	}
+	scanf("%d", &N);
+	i=0;
+	int An=0;
+	while(1) {
+		int a=arr[i]*arr[i+1];
+		if(An<a) An=a;
+		if(An>N) break;
+		i++;	
+	}
+	printf("%d", An);
+	return 0;
+}
