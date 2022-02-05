@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+	int An=0;
+	char arr[1000001];
+	char dl[] = " "; 
+	char *str;
+	gets(arr);
+	
+	str = strtok(arr, dl); //dl값에 ' '를 넣으면 오류남
+	while(str != NULL) {
+		An++;
+		str = strtok(NULL, dl);
+	}
+	printf("%d\n", An);
+	return 0;
+}
