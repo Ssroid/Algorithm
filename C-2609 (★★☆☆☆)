@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int GCD(int m, int M); //최대공약수 
+//최소공배수 = (m*M)/GCD(최대공약수)
+
+int main(void)
+{
+	int m,M;
+	scanf("%d %d", &m, &M);
+	
+	int GCD_N = GCD(m, M);
+	printf("%d\n%d\n", GCD_N, (m*M)/GCD_N);
+ 	
+	return 0;
+}
+
+int GCD(int m, int M) {
+	int i, An;
+	for(i=1;i<=m;i++) {
+		if(m%i==0 && M%i==0) An=i; 
+	}
+	/* 2번방식
+	int tmp; 
+	while(M) {
+		tmp = m%M;
+		m = M;
+		M = tmp; //M이 0일때까지 반복 
+	}
+	return m;
+	*/
+	return An;
+}
+
