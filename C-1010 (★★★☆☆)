@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+double Fct(double N); 
+
+int main(void)
+{
+	int T, N, M;
+	int i;
+	
+	scanf("%d", &T);
+	
+	for(i=0;i<T;i++) {
+		scanf("%d %d", &N, &M);
+		double A = Fct(M)/(Fct(N)*Fct(M-N)); //nCr 조합공식 
+		printf("%.0lf\n", A); //.0lf인지는 모르겠음... 
+	}
+	return 0;
+}
+
+double Fct(double N) {
+	double An;
+	for(An=1;N>1; N--) An*=N;
+	return An;
+}
+
+
