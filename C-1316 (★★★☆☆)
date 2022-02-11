@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NOWARNINGS
+#define _USE_MATH_DEFINES
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+	int N;
+	int i,j, An=0, c=1;
+	char str[101];
+	int Alpha[26]= {0};
+	
+	scanf("%d", &N);
+	for(i=0;i<N;i++) {
+		scanf("%s", str);
+		for(j=0;j<strlen(str);j++) {
+			if(strlen(str)==1) c=1; //만일 길이가 1이면 무조건 1개추가 
+			else {
+				if((str[j] != str[j+1])) {
+					Alpha[(int)str[j]-97]++; //등장한 알파벳 수 1증가 , 소문자 알파벳은 -97 
+					if(Alpha[(int)str[j]-97]>1) {
+						c=0; //만일 알파벳 수가 1보다 큰(중복으로 나오면)  
+					}
+				}
+			}
+		}
+		if(c==1) An++;
+		c=1; //c가 0일때도 있으니 다시 1로 초기화 
+		for(j=0;j<26;j++) {
+			Alpha[j]=0; //각 알파벳 숫자를 0으로 초기화 
+		}
+	}
+	printf("%d ", An);
+	return 0;
+}
+
+
+
