@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NOWARNINGS
+#define _USE_MATH_DEFINES
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+	long long a,b,c, tmp;
+	scanf("%lld %lld %lld\n", &a, &b, &c);
+	while(!(a==0 && b==0 && c==0)) {
+		a = pow(a,2);
+		b = pow(b,2);
+		c = pow(c,2);
+		
+		if(a+b==c) printf("right\n");
+		else if(b+c==a) printf("right\n");
+		else if(a+c==b) printf("right\n");
+		else printf("wrong\n");
+		scanf("%lld %lld %lld\n", &a, &b, &c);
+	}
+	return 0;
+}
+
+
+
