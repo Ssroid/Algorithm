@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int compare(const void *arg1, const void *arg2) {
+	if(*(int *) arg1 > *(int *) arg2) return 1;  // '>'면 오름차순, '<'면 내림차순 
+	else if(*(int *) arg1 == *(int *) arg2) return 0;
+	else return -1;
+}
+
+int main() {
+	int i;
+	int N;
+	scanf("%d", &N);
+	int *list = malloc(sizeof(int) * N);
+	for(i=0;i<N;i++) {
+		scanf("%d", &list[i]);
+	}
+	qsort((void *)list, (size_t)N, sizeof(int), compare);
+	
+	for(i=0;i<N; i++) {
+		printf("%d\n", list[i]);
+	} 
+	free(list);
+	return 0;
+}
