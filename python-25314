@@ -1,0 +1,7 @@
+A = int(input()) / 4
+
+A = int(A)
+#print(A)
+for i in range(0,A):
+    print("long", end=" ")
+print("int")
