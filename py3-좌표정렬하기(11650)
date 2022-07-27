@@ -1,0 +1,11 @@
+N = int(input())
+
+list = []
+
+for i in range(N):
+    x, y = map(int, input().split())
+    list.append((x,y))  #튜플로 쌍으로 저장
+
+list.sort()
+for i in range(N):
+    print(list[i][0], list[i][1])
