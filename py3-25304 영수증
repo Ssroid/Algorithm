@@ -1,0 +1,12 @@
+A = int(input())
+B = int(input())
+total = 0
+for r in range(B) :
+    c,d = map(int,input().split())
+    total += c*d
+
+if total == A :
+    print("Yes")
+
+else:
+    print("No")
