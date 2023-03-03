@@ -1,0 +1,10 @@
+def solution(array):
+    cnt = 0
+    array = str(array)
+    for i in range(len(array)-1):
+        
+        if '7' == array[i]:
+            cnt += 1
+    
+    answer = cnt
+    return answer
