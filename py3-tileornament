@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+user_input = int(input())
+tail = [1,1]
+
+if user_input > 2:
+	for i in range(2, user_input):
+		tail.append(tail[i-1]+tail[i-2])
+	
+	#가로+세로 = 3*이전변 + 2*두번째전 변 
+	print(2*(3*tail[i-1]+2*tail[i-2]))
+
+elif user_input == 2:
+	print("6")
+else:
+	print("4")
+	
