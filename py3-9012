@@ -1,0 +1,16 @@
+n = int(input())
+
+for _ in range(n):
+    T = input()
+    ans = 'NO'
+    cnt = 0
+    for i in T:
+        if i =='(':
+            cnt += 1
+        else:
+            cnt -= 1
+        if cnt < 0:  #만약 0보다 작으면 이미 정상괄호X
+            break;
+    if cnt == 0:
+        ans = 'YES'
+    print(ans)           
