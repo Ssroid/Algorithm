@@ -1,0 +1,21 @@
+'''주석'''
+N, K = map(int,input().split())
+A = []
+
+for _ in range(N):
+    A.append(int(input()))
+A.sort(reverse=True)
+
+#print(A)
+
+
+ans = 0
+for i in A:
+    if i <= K:
+        ans += K // i
+        K %= i
+        #print(f"사용한동전:{i}, 총갯수:{ans}, 남은금액:{K}")
+        if K <= 0:
+            break
+print(ans)
+
