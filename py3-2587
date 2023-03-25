@@ -1,0 +1,9 @@
+arr = []
+for i in range(5):
+    arr.append(int(input()))
+
+arr.sort(reverse = True)  #리버스로 한번 해봄..
+#print(arr)
+print(sum(arr)//5)
+print(arr[2])
+               
