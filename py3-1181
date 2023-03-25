@@ -1,0 +1,34 @@
+n = int(input())
+lst = []
+ans = []
+def word_count(word):
+    wd = list(word)
+    return len(wd)
+
+for i in range(n):
+    lst.append(input())
+
+set_lst = set(lst)	## set으로 변환해서 중복값을 제거
+lst = list(set_lst)	## 다시 list로 변환
+'''
+lst.sort()    #인터넷 방식..
+print(lst)
+lst.sort(key = len)
+print(lst)
+
+for i in lst:
+    print(i)
+'''
+
+for i in range(len(lst)):
+    cnt = word_count(lst[i])
+    ans.append([lst[i], cnt])
+
+#나는 람다방식으로.. 다중 조건으로
+ans.sort(key = lambda x: (x[1],x[0]))
+for i in range(len(ans)):
+    print(ans[i][0])
+#print(ans)
+
+
+
