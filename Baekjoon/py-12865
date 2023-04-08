@@ -1,0 +1,23 @@
+import sys
+
+#N : 물품의 수, K : 버틸수 있는 무게
+N, K = map(int, input().split())
+
+arr = [list(map(int, input().split())) for _ in range(N)]
+
+#print(arr)
+
+an_max = 0
+for i in range(N):
+    sum = 0
+    sum_max = 0
+    for j in range(i, N):
+        # print(arr[j][0]) 주석처리됨.
+        if sum + arr[j][0]<=K:
+            sum += arr[j][0]
+            sum_max += arr[j][1]
+    an_max = max(an_max, sum_max)
+
+print(an_max)
+
+    
